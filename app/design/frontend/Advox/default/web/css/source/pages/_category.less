@@ -1,0 +1,32 @@
+& when (@media-common = true) {
+    .page-products {
+        // Use this class instead of .catalog-category-view because catalog page also include search and filter page.
+
+        .swatch-attribute {
+            &.size {
+                .swatch-option {
+                    height: auto;
+                    width: 100%;
+                    text-align: left;
+                    box-sizing: border-box;
+                    border-radius: 5px;
+
+                    // Because task only mention styling it for catalog only so i put label option to content.
+                    // Weakness is can't translate for this but this only affect to catalog page.
+                    // Another way that we can change label for size swatch attribute in admin or override js render swatch option and add label to html render, but it will apply on all swatch size att.
+                    &:before {
+                        display: inline-block;
+                        content: 'Option: ';
+                        margin-right: 5px;
+                    }
+
+                    &.selected {
+                        outline: none;
+                        border: none;
+                        background: #949494;
+                    }
+                }
+            }
+        }
+    }
+}
